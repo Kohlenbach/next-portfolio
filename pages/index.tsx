@@ -21,7 +21,7 @@ export default function MainPage({ data }) {
 
   return (
     <>
-      <Head/>
+      <Head title="Lukas Kohlenbach"/>
       <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: .5 }}>
         <Header/>
       </motion.div>
