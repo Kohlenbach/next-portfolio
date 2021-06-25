@@ -28,7 +28,7 @@ export default function MainPage({ data }) {
       <motion.div animate={{ opacity: 1, translateY: 0 }} initial={{ opacity: 0, translateY: '50px' }} transition={{ duration: .5 }}>
         <VStack pb="24" pt="12" px={[8, 32]} w="full" spacing="8" alignItems="start">
           <Image
-            src="/photo.jpg"
+            src="/photo.jpeg"
             priority
             quality={100}
             width={75}
