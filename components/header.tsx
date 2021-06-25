@@ -1,21 +1,23 @@
-import { Flex, Heading, Container } from '@chakra-ui/react'
-import { IoMoonOutline as MoonSvg } from 'react-icons/io5'
+import { Flex, Heading, Container, useColorMode } from '@chakra-ui/react'
+import { IoMoonOutline as MoonSvg, IoSunnyOutline as SunSvg } from 'react-icons/io5'
 
 export default function Header() {
+  const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <Container
       as="header"
-      px="32"
+      px={[8, 32]}
       py="4"
-      pos="fixed"
       w="full"
       maxW="full"
-      backgroundColor="white"
     >
       <Flex justifyContent="space-between">
         <Heading className="anton-font" fontSize="larger">LUKI</Heading>
-        <MoonSvg/>
+        {(colorMode === 'light')
+          ? <MoonSvg size={25} cursor="pointer" onClick={() => toggleColorMode()}/>
+          : <SunSvg size={25} cursor="pointer" onClick={() => toggleColorMode()}/>
+        }
       </Flex>
     </Container>
   )
