@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <Container
       as="header"
-      px={[8, 32]}
+      px={[8, 32, 32, 32, 44, 64, 96]}
       py="4"
       w="full"
       maxW="full"

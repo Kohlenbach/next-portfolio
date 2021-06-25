@@ -26,13 +26,14 @@ export default function MainPage({ data }) {
         <Header/>
       </motion.div>
       <motion.div animate={{ opacity: 1, translateY: 0 }} initial={{ opacity: 0, translateY: '50px' }} transition={{ duration: .5 }}>
-        <VStack pb="24" pt="12" px={[8, 32]} w="full" spacing="8" alignItems="start">
+        <VStack pb="24" pt="12" px={[8, 32, 32, 32, 44, 64, 96]} w="full" spacing="8" alignItems="start">
           <Image
             src="/photo.jpeg"
             priority
             quality={100}
             width={75}
             height={75}
+            objectFit="cover"
             className="rounded-image"
           />
           <Heading size="3xl">Hi! I'm Lukas Kohlenbach.</Heading>
@@ -71,7 +72,7 @@ export default function MainPage({ data }) {
         </VStack>
         <Grid
           gridTemplateColumns="repeat(auto-fit, minmax(260px, 1fr))"
-          px={[8, 32]} w="full"
+          px={[8, 32, 32, 32, 44, 64, 96]} w="full"
           mb="24"
           gap="4"
         >
