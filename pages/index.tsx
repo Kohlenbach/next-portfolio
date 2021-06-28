@@ -7,6 +7,8 @@ import { IoLogoLinkedin  as LinkedinIcon } from 'react-icons/io5'
 import { motion } from 'framer-motion'
 
 export default function MainPage({ data }) {
+  const normalizedProjects = data.filter(project => project.owner.login === 'Kohlenbach')
+
   function handleEmail() {
     window.open('mailto:kohle.lukas@gmail.com')
   }
@@ -76,7 +78,7 @@ export default function MainPage({ data }) {
           mb="24"
           gap="4"
         >
-          {data.map(project => (
+          {normalizedProjects.map(project => (
             <motion.div whileHover={{ translateY: '-5px' }}>
               <Box
                 shadow="base"
