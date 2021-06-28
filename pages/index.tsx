@@ -7,8 +7,6 @@ import { IoLogoLinkedin  as LinkedinIcon } from 'react-icons/io5'
 import { motion } from 'framer-motion'
 
 export default function MainPage({ data }) {
-  const normalizedProjects = data.filter(project => project.owner.login === 'Kohlenbach')
-
   function handleEmail() {
     window.open('mailto:kohle.lukas@gmail.com')
   }
@@ -78,7 +76,7 @@ export default function MainPage({ data }) {
           mb="24"
           gap="4"
         >
-          {normalizedProjects.map(project => (
+          {data.map(project => (
             <motion.div whileHover={{ translateY: '-5px' }}>
               <Box
                 shadow="base"
@@ -104,10 +102,11 @@ export default function MainPage({ data }) {
 export async function getStaticProps() {
   const response = await fetch('https://api.github.com/users/Kohlenbach/repos')
   const projects = await response.json()
+  const normalizedProjects = projects.filter(project => !project.fork)
 
   return {
     props: {
-      data: projects
+      data: normalizedProjects,
     },
   }
 }
